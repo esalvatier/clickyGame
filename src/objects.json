@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "src":"https://cdn0.iconfinder.com/data/icons/Android-R2-png/512/Browser-Android-R.png",
+    "clicked": false
+  },
+  {
+    "id": 2,
+    "src":"https://cdn2.iconfinder.com/data/icons/ios7-inspired-mac-icon-set/1024/safari_5122x.png",
+    "clicked": false
+  },
+  {
+    "id": 3,
+    "src":"https://cdn1.iconfinder.com/data/icons/logotypes/32/chrome-512.png",
+    "clicked": false
+  },
+  {
+    "id": 4,
+    "src":"https://is3-ssl.mzstatic.com/image/thumb/Purple118/v4/c5/98/ae/c598ae75-1ec1-f7c9-5902-2de3b625fc63/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-10.png/246x0w.jpg",
+    "clicked": false
+  },
+  {
+    "id": 5,
+    "src":"https://cdn0.iconfinder.com/data/icons/mozilla-icons/256/firefox_png.png",
+    "clicked": false
+  },
+  {
+    "id": 6,
+    "src":"https://cdn1.iconfinder.com/data/icons/android-png/256/Android-Opera-Mini.png",
+    "clicked": false
+  }
+]
