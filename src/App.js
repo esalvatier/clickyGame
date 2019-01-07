@@ -10,7 +10,8 @@ class App extends Component {
   state = {
     objects: [],
     score: 0,
-    highScore: 0
+    highScore: 0,
+    clickRes: null
   };
 
   componentDidMount() {
@@ -20,6 +21,7 @@ class App extends Component {
   handleClick = event => {
     event.preventDefault();
     const id = event.target.dataset.index;
+    this.setState({clickRes: this.state.objects[id].clicked});
     this.state.objects[id].clicked ? this.reset() : this.increment(id);
   };
 
@@ -34,7 +36,16 @@ class App extends Component {
   increment(index) {
     let current = this.state.score;
     current += 1;
-    this.setState({score: current})
+    let hs;
+    if (current >= this.state.highScore) {
+      hs = current;
+    } else {
+      hs = this.state.highScore;
+    }
+    this.setState({
+      score: current,
+      highScore: hs
+    })
     this.setValue(index, true)
     this.shuffle();
   };
@@ -46,9 +57,6 @@ class App extends Component {
       [array[i], array[j]] = [array[j], array[i]];
     }
     this.setState({objects: array});
-    if (this.state.score >= this.state.highScore) {
-      this.setState({highScore: this.state.score});
-    } 
   };
 
   setValue(index, value) {
@@ -69,7 +77,8 @@ class App extends Component {
         </Row>
         <Row>
           {this.state.objects.map((object, i) => 
-          <Object 
+          <Object
+            key={object.id}
             data={object}
             index={i}
             handler={this.handleClick}
