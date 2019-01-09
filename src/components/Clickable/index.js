@@ -2,7 +2,7 @@ import React from "react";
 import Col from "../Col";
 import Container from "../Container";
 
-function Object(props) {
+function Clickable(props) {
   return (
     <Col size="md-4">
       <Container>
@@ -12,4 +12,4 @@ function Object(props) {
   );
 }
 
-export default Object;
+export default Clickable;

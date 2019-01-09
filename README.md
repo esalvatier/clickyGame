@@ -1,4 +1,29 @@
+#Clicky Game
+This app prompts the user to click on one of nine internet browser icons; each time shuffling the order of the icons, continuing until they click on an icon that has already been clicked once. This resets the game. Current score (the number of consecutive icons clicked correctly) and high score (highest number for that session) are displayed as well.
+
+The app is build using React primarily, and is stateful; using he App.js file as it's primary controlling component. Within that file several helper functions are utilized to handle the logic of the game. 'handleClick' is passed into the Clickable Component's onClick function to handle the logic of the game; and it uses both a 'reset' and 'increment' function to either handle the resetting of the game in case of an incorrect click and a correct click respectively.
+
+Additionally a 'shuffle' and 'setValue' function exist. With 'shuffle' handling shuffling the contents of the clickable object array in the state around to change their order after each click and 'setValue' setting the individual 'Clickable' objects 'clicked' value to true of false.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Components and Data
+  *Clickable: Coponent which takes in object data to display and be clicked for the game to proceed.
+
+  *clickables.json: json file containing array of clickable objects, each with an id property, a src property containing a link to a source image, and a clicked properties initially set to false which tracks whether the object has been clicked.
+
+## Helper Functions
+  *componentDidMount: modified to automatically set the state of the clickables array to the imported json object array
+
+  *handleClick: function passed into Clickable component's onClick to handle logic of game. Checks whether it is the start of the game, through the state's 'start' property, and whether the item clicked has already been clicked in the state, utilizes two additional helper functions ('reset' and 'increment') to progress the game.
+
+  *reset: resets game completely, setting the score to 0 and resetting the clickable objects 'clicked' properties to false once again using the 'setValue' helper function.
+
+  *increment: increments the score by one, checks whether the current score exceeds the current highscore and then updates the state of both. Alters clicked property of corresponding clickable object in the array through 'setValue' and then uses 'shuffle' helper function to shuffle order of objects.
+
+  *shuffle: takes the current current array of clickable objects, shuffles the order and sets 'clickable' array to the new, shuffled, array
+
+  *setValue: takes in an index value and a boolean true or false value and sets the 'clicked' property of the corresponding object in the clickable array, then updates state with the changed array
 
 ## Available Scripts
 
